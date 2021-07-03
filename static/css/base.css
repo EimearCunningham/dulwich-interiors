@@ -5,5 +5,9 @@ html {
 body {
     background: url('/media/homepage_image.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 165px);
+    height: calc(100vh - 164px);
+}
+
+.header-container {
+    padding-top: 164px;
 }
