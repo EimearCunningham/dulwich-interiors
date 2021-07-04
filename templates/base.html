@@ -36,7 +36,7 @@
   </head>
   <body>
     <header class="container-fluid fixed-top">
-      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+      <div id="topnav" class="row bg-white pt-lg-2">
         <div class="col-12 col-lg-4">
           <a href="{% url 'home' %}" class="navbar-brand"><h2>Dulwich Interiors</h2></a>
         </div>
@@ -76,9 +76,9 @@
                         <div>Shopping cart</div>
                         <p class="my-0">
                             {% if grand_total %}
-                                ${{ grand_total|floatformat:2 }}
+                                £{{ total|floatformat:2 }}
                             {% else %}
-                                $0.00
+                                £0.00
                             {% endif %}
                         </p>
                     </div>

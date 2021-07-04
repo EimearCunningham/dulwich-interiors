@@ -16,16 +16,18 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2>Shopping Bag</h2>
+                <h2>Shopping Cart</h2>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                {% if bag_items %}
-                    <div class="table-responsive rounded"></div>
+                {% if cart_items %}
+                    <div class="table-responsive rounded">
+                        {{ cart_items }}
+                    </div>
                 {% else %}
-                    <p>Your bag is empty.</p>
+                    <p>Your cart is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-secondary"> Keep Shopping
                     </a>
                 {% endif %}
