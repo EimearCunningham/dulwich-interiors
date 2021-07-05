@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
 from django.contrib import messages
 from products.models import Product
+
 
 def view_cart(request):
     """ View to return the shopping cart page """
@@ -18,11 +20,13 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
-        messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}!')
+        messages.success(
+            request, f'Updated {product.name} quantity to {cart[item_id]}!')
 
     else:
         cart[item_id] = quantity
-        messages.success(request, f'Successfully added {product.name} to your cart!')
+        messages.success(
+            request, f'Successfully added {product.name} to your cart!')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
@@ -37,7 +41,8 @@ def adjust_cart(request, item_id):
 
     if quantity > 0:
         cart[item_id] = quantity
-        messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}!')
+        messages.success(
+            request, f'Updated {product.name} quantity to {cart[item_id]}!')
     else:
         cart.pop(item_id)
         messages.success(request, f'Removed {product.name} from your cart')
@@ -58,6 +63,6 @@ def remove_from_cart(request, item_id):
         request.session['cart'] = cart
         return HttpResponse(status=200)
 
-    except exception as e:
+    except Exception as e:
         messages.error(request, f'Error removing item {e}')
         return HttpResponse(status=500)
