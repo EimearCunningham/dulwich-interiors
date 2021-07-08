@@ -11,4 +11,4 @@ def blog(request):
 def post_detail(request):
     model = Post
 
-    return render(request, template)
+    return render(request, 'blog/post_detail.html')
