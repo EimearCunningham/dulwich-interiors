@@ -1,4 +1,5 @@
 from django.db import models
+from django.views import generic
 from django.contrib.auth.models import User
 
 
@@ -20,3 +21,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class blog(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'index.html'
+
+
+class post_detail(generic.DetailView):
+    model = Post
+    template_name = 'post_detail.html'
