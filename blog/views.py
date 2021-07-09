@@ -1,14 +1,12 @@
-from django.shortcuts import render
+from django.views import generic
 from .models import Post
 
 
-def blog(request):
+class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'blog.html'
 
-    return render(request, 'blog/blog.html')
 
-
-def post_detail(request):
+class PostDetail(generic.DetailView):
     model = Post
-
-    return render(request, 'blog/post_detail.html')
+    template_name = 'post_detail.html'
