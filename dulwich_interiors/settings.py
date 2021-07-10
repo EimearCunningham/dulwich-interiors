@@ -179,3 +179,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STANDARD_DELIVERY_PERCENTAGE = 20
+
+STRIPE_CURRENCY = 'gbp'
+STIPE_PUBLIC_KEY - os.getenv('STRIPE_PUBLIC_KEY', '')
+STIPE_SECRET_KEY - os.getenv('STRIPE_SECRET_KEY', '')
