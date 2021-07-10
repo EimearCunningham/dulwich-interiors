@@ -15,8 +15,8 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    if method == 'POST':
-        cart =  request.method.get('cart', {})
+    if request.method == 'POST':
+        cart = request.session.get('cart', {})
 
         form_data = {
             'full_name': request.POST['full_name'],
@@ -25,8 +25,8 @@ def checkout(request):
             'country': request.POST['country'],
             'postcode': request.POST['postcode'],
             'town_or_city': request.POST['town_or_city'],
-            'street_address_1': request.POST['street_address_1'],
-            'street_address_2': request.POST['street_address_2'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
             'country': request.POST['country'],
         }
 
