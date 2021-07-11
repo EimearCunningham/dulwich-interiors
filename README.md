@@ -6,13 +6,13 @@ Live website:
 
 # UX
 ### Who this website is for:
-
+This website is for customers interested in buying home interior products.
 
 ### What they want to achieve:
-
+They want to be able to browse through products and potentially make a purchase. 
 
 ### This project is the best way to help them achieve these things because:
-
+The simple, clear layout of the site allows users to easily add items to their cart and make a purchase.
 
 ## User Stories:
 ### Site user
@@ -28,7 +28,7 @@ Live website:
 
 ### Site / business owner
 1. As a site owner, I want to be able to add/edit and delete products and services on the site.
-2. As a site owner, I want to be able to upload news/updates about the business.
+2. As a site owner, I want to be able to upload news/updates about the business. 
 
 ## Design 
 ### Color Scheme 
