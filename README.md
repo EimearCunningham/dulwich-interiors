@@ -61,6 +61,30 @@ The simple, clear layout of the site allows users to easily add items to their c
 </p>
 </details>
 
+<details>
+<summary>Login (Click for images)</summary>
+<p align="center">
+
+![Image](readme-images/wireframes/login-wireframes.png)
+</p>
+</details>
+
+<details>
+<summary>Register (Click for images)</summary>
+<p align="center">
+
+![Image](readme-images/wireframes/register-wireframes.png)
+</p>
+</details>
+
+<details>
+<summary>Cart (Click for images)</summary>
+<p align="center">
+
+![Image](readme-images/wireframes/cart-wireframes.png)
+</p>
+</details>
+
 
 
 # Features
