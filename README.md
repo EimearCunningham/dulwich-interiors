@@ -34,9 +34,16 @@ The simple, clear layout of the site allows users to easily add items to their c
 ### Color Scheme 
 
 ### Typography 
-
+'Montserrat' family from Google Fonts was used throughout the site. I selected this font as I thought it complimented the clean, simple feel of the site. 
 
 ## Wireframes:
+<details>
+<summary>Home (Click for images)</summary>
+<p align="center">
+![Image](readme-images/wireframes/home-wireframes.png)
+</p>
+</details>
+
 
 
 # Features
