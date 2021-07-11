@@ -40,7 +40,24 @@ The simple, clear layout of the site allows users to easily add items to their c
 <details>
 <summary>Home (Click for images)</summary>
 <p align="center">
+
 ![Image](readme-images/wireframes/home-wireframes.png)
+</p>
+</details>
+
+<details>
+<summary>Products (Click for images)</summary>
+<p align="center">
+
+![Image](readme-images/wireframes/product-wireframes.png)
+</p>
+</details>
+
+<details>
+<summary>Product details (Click for images)</summary>
+<p align="center">
+
+![Image](readme-images/wireframes/product-detail-wireframes.png)
 </p>
 </details>
 
