@@ -29,6 +29,19 @@
     position: relative;
     right: .5rem;
 }
+select,
+select option {
+  color: #000000;
+
+}
+
+select:invalid {
+  color: #aab7c4 !important; 
+}
+
+.form-select {
+  border: 1px solid #000;
+}
 
 #payment-form .form-control,
 #card-element {
