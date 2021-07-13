@@ -22,6 +22,7 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
       </style>
+    <script src="https://kit.fontawesome.com/cbd3a1b10f.js" crossorigin="anonymous"></script>
     {% endblock %}
 
     {% block extra_css %}
@@ -51,7 +52,7 @@
             <div class="input-group w-100">
               <input class="form-control" type="text" name="q" placeholder="Search our products">
               <div>
-                <button class="form-control" type="submit">Search</button>
+                <button class="form-control" type="submit"><i class="fas fa-search"></i></button>
               </div>
             </div>
           </form>
@@ -60,7 +61,7 @@
         <div class="col-12 col-lg-4">
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
             <li class="nav-item dropdown list-inline-item">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">My Account</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-lg"></i></a>
               <div class="dropdown-menu" aria-labelledby="dropdown01">
                 {% if request.user.is_authenticated %}
                   {% if request.user.is_superuser %}
@@ -78,7 +79,7 @@
             <li class="list-inline-item">
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}">
                     <div class="text-center">
-                        <div>Shopping cart</div>
+                        <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                         <p class="my-0">
                             {% if grand_total %}
                                 £{{ total|floatformat:2 }}
