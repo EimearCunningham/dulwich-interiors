@@ -1,0 +1,12 @@
+Hello {{ order.full_name }}
+
+Thank you for shopping at Dulwich Interiors!
+
+This is a confirmation of your order - {{ order.order_number }}
+
+Your order will be shipped to {{ order.street_address1}} within 3 business days.
+
+Please feel free to call us on 0123456776 if you need anything in the meantime.
+
+Thanks again!
+Dulwich Interiors 
