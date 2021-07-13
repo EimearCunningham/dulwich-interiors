@@ -41,7 +41,7 @@
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-secondary" 
                                                 data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                MINUS
+                                                <i class="fas fa-minus"></i>
                                             </button>
                                         </div>
                                         <input class="form-control qty_input" type="number"
@@ -51,7 +51,7 @@
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-secondary"
                                                 data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                PLUS
+                                                <i class="fas fa-plus"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@
                                 <a href="{% url 'products' %}" class="btn btn-secondary">
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-secondary" value="Add to Cart">
+                                <input type="submit" class="btn btn-secondary" value="Add to cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>

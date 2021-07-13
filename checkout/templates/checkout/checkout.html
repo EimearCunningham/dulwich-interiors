@@ -109,10 +109,10 @@
 
                     <div class="submit-button text-right mt-5 mb-2">
                         <a href="{% url 'view_cart' %}" class="btn btn-secondary">
-                            <span class="font-weight-bold">Adjust cart</span>
+                            <span class="font-weight-bold"><i class="fas fa-undo-alt"></i> Adjust Cart</span>
                         </a>
                         <button id="submit-button" class="btn btn-secondary">
-                            <span class="font-weight-bold">Complete Order</span>
+                            <span class="font-weight-bold">Pay Now <i class="fas fa-credit-card"></i></span>
                         </button>
                         <p class="small text-danger my-0">
                             <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
