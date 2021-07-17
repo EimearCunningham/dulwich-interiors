@@ -36,3 +36,17 @@ def add_post(request):
 
     return render(request, template, context)
 
+
+def edit_post(request, slug):
+    """ Edit a product in the store """
+    post = get_object_or_404(Post, slug=slug)
+    form = BlogForm(instance=post)
+    messages.info(request, f'You are editing {post.title}')
+
+    template = 'blog/edit_post.html'
+    context = {
+        'form': form,
+        'post': post,
+    }
+
+    return render(request, template, context)
