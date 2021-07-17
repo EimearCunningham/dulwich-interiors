@@ -38,10 +38,20 @@ def add_post(request):
 
 
 def edit_post(request, slug):
-    """ Edit a product in the store """
+    """ Edit a blog post  """
     post = get_object_or_404(Post, slug=slug)
-    form = BlogForm(instance=post)
-    messages.info(request, f'You are editing {post.title}')
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully edited blog post!')
+            return redirect(reverse('post_detail', args=[post.slug]))
+        else:
+            messages.error(request, 'Failed to edit blog post. Please ensure the form is valid.')
+
+    else:
+        form = BlogForm(instance=post)
+        messages.info(request, f'You are editing {post.title}')
 
     template = 'blog/edit_post.html'
     context = {
@@ -50,3 +60,11 @@ def edit_post(request, slug):
     }
 
     return render(request, template, context)
+
+
+def delete_post(request, slug):
+    """ Delete a post from the blog """
+    post = get_object_or_404(Post, slug=slug)
+    post.delete()
+    messages.success(request, 'Post deleted!')
+    return redirect(reverse('blog'))
