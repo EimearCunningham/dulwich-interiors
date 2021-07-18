@@ -85,6 +85,23 @@ The simple, clear layout of the site allows users to easily add items to their c
 </p>
 </details>
 
+<details>
+<summary>Checkout (Click for images)</summary>
+<p align="center">
+
+![Image](readme-images/wireframes/checkout-wireframes.png)
+</p>
+</details>
+
+
+<details>
+<summary>Checkout Success (Click for images)</summary>
+<p align="center">
+
+![Image](readme-images/wireframes/checkout-success-wireframes.png)
+</p>
+</details>
+
 
 
 # Features
