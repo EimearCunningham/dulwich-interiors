@@ -32,9 +32,13 @@ The simple, clear layout of the site allows users to easily add items to their c
 
 ## Design 
 ### Color Scheme 
+The following colors were selected for use across the site:
+#AD974F HUSK - This is a golden shade of yellow which gives the site a high end classy feel.
+#231F20 AUBERGINE - A slighter lighter than black shade which contrasts the other colors.
+#EAEAEA WHISPER - An off white shade for backgrounds. 
 
 ### Typography 
-'Montserrat' family from Google Fonts was used throughout the site. I selected this font as I thought it complimented the clean, simple feel of the site. 
+'Dancing Script' family from Google Fonts was used throughout the site. I selected this font as I thought it complimented the clean, classy feel of the site.
 
 ## Wireframes:
 <details>
@@ -122,7 +126,7 @@ The simple, clear layout of the site allows users to easily add items to their c
 
 
 ## Other technologies used
-
+https://www.htmlcsscolor.com/ - Selecting colors 
 
 # Testing
 

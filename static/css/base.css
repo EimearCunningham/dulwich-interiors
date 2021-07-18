@@ -1,29 +1,49 @@
+/* General rules across site */
+
+
 html {
     height: 100%;
 }
+
 
 body {
     background: url('/media/homepage_image.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Dancing Script', cursive;
 }
 
 .header-container {
     padding-top: 164px;
 }
 
-/* white overlay class */
 .overlay {
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     position: fixed;
-    background: white;
+    background: #EAEAEA;
     z-index: -1;
 }
 
+/* Colors 
+#AD974F GOLD
+#231F20 DARK GRAY
+#EAEAEA OFF WHITE */
+
+
+h2 {
+    color: #AD974F;
+}
+
+.dropdown-item, .nav-link {
+    color: #231F20;
+}
+
+
+
+/* Images */
 .card-img-top {
     height: 50vh;
 }
@@ -33,12 +53,15 @@ body {
     width: 20vw;
 }
 
+/* Messages */
 .message-container {
     position: fixed;
     top: 72px;
     right: 15px;
     z-index: 99999999999;
 }
+
+
 
 
 
