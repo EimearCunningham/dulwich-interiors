@@ -102,6 +102,14 @@ The simple, clear layout of the site allows users to easily add items to their c
 </p>
 </details>
 
+<details>
+<summary>Profile (Click for images)</summary>
+<p align="center">
+
+![Image](readme-images/wireframes/profile-wireframes.png)
+</p>
+</details>
+
 
 
 # Features
