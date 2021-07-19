@@ -1,0 +1,1 @@
+web: gunicorn dulwich_interiors.wsgi:application
