@@ -154,37 +154,37 @@ https://www.htmlcsscolor.com/ - Selecting colors
         pip3 install psycopg2_binary
     ```       
 
-    - Freeze new requirements to requirements.txt
+- Freeze new requirements to requirements.txt
     ```
         pip3 freeze > requirements.txt
     ```
 
-    - Go to settings.py file and import dj_database_url
+- Go to settings.py file and import dj_database_url
     ```python
         import dj_database_url
     ```
     
-    - Add Postgres database settings to settings.py
+- Add Postgres database settings to settings.py
     ``` python
         DATABASES = {
             'default': dj_database_url.parse('ENTER DATABASE URL FROM APP CONFIG SETTINGS HERE')
         }
     ```
 
-    - Comment out settings for sqlite database
-    - Migrate to new Postgres database
+- Comment out settings for sqlite database
+- Migrate to new Postgres database
     ``` 
         python3 manage.py migrate
     ```
 
-    - Create a superuser:
+- Create a superuser:
     ```
         python3 manage.py createsuperuser
     ```
     
     **Here I made the error of pushing to github without removing my Postgres Database URL. I fixed this by creating a completely new app and DB URL so that it wasn't pushed to Github at any stage**
 
-    - Add the following statement to settings.py to use Postgres DB if available and sqlite DB if not:
+- Add the following statement to settings.py to use Postgres DB if available and sqlite DB if not:
     ``` python
         if "DATABASE_URL" in os.environ:
             DATABASES = {
@@ -198,6 +198,43 @@ https://www.htmlcsscolor.com/ - Selecting colors
                 }
             }
     ```
+- Postgres database has now been set up.
+
+- To complete the Heroku set up we need to install gunicorn and add it to a Procfile as shown:
+    ```
+        pip3 install Gunicorn
+    ```
+- In Procfile:
+    ```
+        web: gunicorn dulwich_interiors.wsgi:application
+    ```
+
+- Log into Heroku through your workspace termnial:
+    ```
+        heroku login -i
+    ```
+
+- Disable static file collection for now
+    ```
+        heroku config:set DISABLE_COLLECTSTATIC=1 --app <insert Heroku app name here>
+    ```
+        
+- In settings.py add:
+    ``` python
+        ALLOWED_HOSTS = ['dulwich-interiors-ms4.herokuapp.com', 'localhost']
+    ```
+- Add and commit changes to github
+- Push to Heroku
+    ```
+        heroku git:remote -a <dulwich-interiors-ms4>
+        git push heroku master
+    ```
+
+- Enable automatic deploys to heroku
+        - Go to setting tab of Heroku app
+        - Click 'Connect to Github' and search for respository
+        - Select repository
+        - Click 'Enable automatic deploys'
 
 
 # Credits
