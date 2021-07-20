@@ -123,10 +123,18 @@ The following colors were selected for use across the site:
 
 # Technologies Used
 ## Languages, frameworks and libraries used
-
+* HTML5, CSS3, Javascript and Python were the programming languages used.
+* Django framework used to build the application. 
+* [Github](https://github.com/) - Used for hosting repository and version control
+* [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Bootstraps latest version 5 was used for layout and responsiveness. 
+* [jQuery](https://jquery.com/)- jQuery was used throughout the site
+* [Heroku Postgres](https://www.heroku.com/postgres) - Used as database.
 
 ## Other technologies used
-https://www.htmlcsscolor.com/ - Selecting colors 
+* [Heroku](http://heroku.com/) - Used to deploy project
+* [Balsamiq](https://balsamiq.com/wireframes/) - Desktop app used to create wireframes.
+* [Font Awesome](https://fontawesome.com/) - Used for all icons.
+* [HTML CSS Color](https://www.htmlcsscolor.com/) - Used to select colors for site.
 
 # Testing
 
