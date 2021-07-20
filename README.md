@@ -133,6 +133,72 @@ https://www.htmlcsscolor.com/ - Selecting colors
 
 # Deployment
 
+## Deploying to Heroku 
+
+- Create a Heroku account and app:
+    - Go to https://signup.heroku.com/login and create an account.
+    - From your dashboard click 'Create app'.
+    - Create a name for the app and select the region closest to you.
+    - Click 'Create app'.
+
+- Set up Postgres database on app:
+    - Go to 'Resources' tab of Heroku app.
+    - Search for 'Postgres'.
+    - Add Postgres to the app, selecting to use the free development plan.
+
+- Install requirements in workspace:
+    - Install dj_database_url and psycopg2-binary 
+    ```
+        pip3 install dj_database_url
+            
+        pip3 install psycopg2_binary
+    ```       
+
+    - Freeze new requirements to requirements.txt
+    ```
+        pip3 freeze > requirements.txt
+    ```
+
+    - Go to settings.py file and import dj_database_url
+    ```python
+        import dj_database_url
+    ```
+    
+    - Add Postgres database settings to settings.py
+    ``` python
+        DATABASES = {
+            'default': dj_database_url.parse('ENTER DATABASE URL FROM APP CONFIG SETTINGS HERE')
+        }
+    ```
+
+    - Comment out settings for sqlite database
+    - Migrate to new Postgres database
+    ``` 
+        python3 manage.py migrate
+    ```
+
+    - Create a superuser:
+    ```
+        python3 manage.py createsuperuser
+    ```
+    
+    **Here I made the error of pushing to github without removing my Postgres Database URL. I fixed this by creating a completely new app and DB URL so that it wasn't pushed to Github at any stage**
+
+    - Add the following statement to settings.py to use Postgres DB if available and sqlite DB if not:
+    ``` python
+        if "DATABASE_URL" in os.environ:
+            DATABASES = {
+                "default": dj_database_url.parse(os.environ.get('DATABASE_URL'))
+                }
+        else:
+            DATABASES = {
+                'default': {
+                    'ENGINE': 'django.db.backends.sqlite3',
+                    'NAME': BASE_DIR / 'db.sqlite3',
+                }
+            }
+    ```
+
 
 # Credits
 
