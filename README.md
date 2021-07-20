@@ -25,6 +25,7 @@ The simple, clear layout of the site allows users to easily add items to their c
 7. As a user, I want to create and sign in to my account.
 8. As a signed in user, I want to be able to save my delivery details for my next purchase.
 9. As a user, I want to read news/updates on the business.
+10. As a user, I want to be able to comment on news/updates uploaded by the business - to show support / ask questions. 
 
 ### Site / business owner
 1. As a site owner, I want to be able to add/edit and delete products and services on the site.
@@ -127,14 +128,18 @@ The following colors were selected for use across the site:
 * Django framework used to build the application. 
 * [Github](https://github.com/) - Used for hosting repository and version control
 * [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Bootstraps latest version 5 was used for layout and responsiveness. 
-* [jQuery](https://jquery.com/)- jQuery was used throughout the site
+* [jQuery](https://jquery.com/)- jQuery was used throughout the site.
 * [Heroku Postgres](https://www.heroku.com/postgres) - Used as database.
 
 ## Other technologies used
-* [Heroku](http://heroku.com/) - Used to deploy project
+* [Heroku](http://heroku.com/) - Used to deploy project.
+* [Stripe](https://stripe.com/gb) - System used for payments.
+* [AWS](https://aws.amazon.com/) - Used to host static files.
+* [Google Fonts](https://fonts.google.com/) - Used to import font for site.
 * [Balsamiq](https://balsamiq.com/wireframes/) - Desktop app used to create wireframes.
 * [Font Awesome](https://fontawesome.com/) - Used for all icons.
 * [HTML CSS Color](https://www.htmlcsscolor.com/) - Used to select colors for site.
+* [Pexels](https://www.pexels.com/) - Stock photos used for product images. 
 
 # Testing
 
