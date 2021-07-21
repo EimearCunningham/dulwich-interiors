@@ -1,10 +1,9 @@
 /* General rules across site */
 
-
 html {
     height: 100%;
+    font-size: 16px;
 }
-
 
 body {
     background: url('/media/homepage_image.jpg') no-repeat center center fixed;
