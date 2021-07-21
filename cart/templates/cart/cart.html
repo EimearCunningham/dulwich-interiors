@@ -17,7 +17,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2>Shopping Cart</h2>
+            <h2 class="page-heading">Shopping Cart</h2>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-secondary"
+                                            <button class="decrement-qty btn"
                                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                 <i class="fas fa-minus"></i>
                                             </button>
@@ -62,7 +62,7 @@
                                             name="quantity" value="{{ item.quantity }}" min="1" max="6"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn-secondary"
+                                            <button class="increment-qty btn"
                                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                 <i class="fas fa-plus"></i>
                                             </button>
@@ -94,15 +94,15 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <a href="{% url 'products' %}" class="btn btn-secondary">Keep shopping</a>
-                            <a href="{% url 'checkout' %}" class="btn btn-secondary">Checkout <i class="fas fa-credit-card"></i></a>
+                            <a href="{% url 'products' %}" class="btn">Keep shopping</a>
+                            <a href="{% url 'checkout' %}" class="btn">Checkout <i class="fas fa-credit-card"></i></a>
                         </td>
                     </tr>
                 </table>
             </div>
             {% else %}
             <p>Your cart is empty.</p>
-            <a href="{% url 'products' %}" class="btn btn-secondary"> Keep Shopping
+            <a href="{% url 'products' %}" class="btn"> Keep Shopping
             </a>
             {% endif %}
         </div>

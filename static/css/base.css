@@ -30,12 +30,17 @@ body {
 
 h2 {
     color: #AD974F;
+}
 
+.page-heading {
+  padding-top: 125px;
 }
 
 .dropdown-item, .nav-link {
     color: #231F20;
 }
+
+
 
 /* Images */
 .card-img-top {
@@ -131,10 +136,11 @@ body {
     /* rtl:remove */
     letter-spacing: -.05rem;
   }
+
+
   
   
-  /* RESPONSIVE CSS
-  -------------------------------------------------- */
+  /*  Carousel */
   
   @media (min-width: 40em) {
     /* Bump up size of carousel content */
@@ -153,6 +159,14 @@ body {
     .featurette-heading {
       margin-top: 7rem;
     }
+  }
+
+  /* Buttons */ 
+  .btn {
+    background-color:#AD974F;
+    color: #EAEAEA;
+    border-radius: 2px;
+    padding: 4px;
   }
 
 
