@@ -119,8 +119,83 @@ The following colors were selected for use across the site:
 
 # Features
 
+### Navbar
+- Bootstrap navbar available across all pages
+- First row contains shop logo that takes user back to home page as expected, a search bar to search products, and two logos - one for the user to login/register/visit their profile and one to take the user to their shopping cart.
+- Second row contains links to the All Products page, a dropdown to filter products by room and a link to take the user to the companies 'News' page.
 
-## Features Left to Implement
+### Homepage
+- Contains a carousel of images displaying home interiors 
+- First image contains button that links to the All Products page to encourage users to shop the collection 
+
+### Products page
+- Easily accesible by selecting the 'Products' option from the navbar
+- All Products page shows the user each item for sale at the moment
+- Each product is displayed in a card showing an image of the product, the product name, and the price
+- Each card also has a button to 'View product' which bring the user to the product detail page of that product
+
+### Product details page
+- Individual page for each product to show more details
+- Includes the product name, product image, price of product and product description
+- User has the option of selecting the quantity they would like to purchase (up to 6)
+- User then has the option to add this quantity of the item to their cart, by selecting the 'Add to cart' button - On selecting this a toast message will appear advising the user that the item has been added to their cart
+- User also has the option to 'Keep shopping' if they don't wish to purchase the item
+
+### Cart
+- Accessed by selecting the cart icon from the navbar
+- Gives user the ability to view the product information of items in their cart including a small picture of the product, the product name, the price and the quantity
+- User has the option of updating the quantity of the item, or removing the item from their cart completely
+- Two buttons at the bottom of the page allow the user to either 'Keep shopping' or move forward to the 'Checkout' page 
+
+### Checkout
+- The checkout page consists of two columns - one with a form for the user to fill out and one with an order summary 
+- The order summary includes a breakdown of the order including delivery prices (delivery is 20% of each order)
+- The checkout form will pull through the users profile information if they are logged in (so that they don't need to fill it out each time)
+- Form wil ask for the users name, email address, shippping details and payment details to complete the purchase
+- The user will have two options at the bottom of the page - 'Adjust cart' if they need to make changes to their order before purchasing and 'Pay now' to complete the order
+- The user will be warned that their card will be charged if they select the 'Pay now' button
+
+### Checkout Success
+- A page to let the user know that their purchase has been successful 
+- Heading of page will thank the user 
+- Page will contain the order information (including unique order number), delivery details and billing information 
+- Button at the bottom of the page to allow user to 'Keep shopping' taking them back to the Products page to browse 
+
+### Log in / register functionality 
+- A user who is not logged in will have the option to 'Login' or 'Register' from the Profile icon in the navbar.
+- Django allauth was used for account management
+- If user selects to 'Register' they will be brought to a registration page which asks for their email address, and to create a username and password
+- An email will then be sent to the user to verify their account
+- If user selects to login they will be brought to the login page where they can enter their username and password 
+- If a user logs in as a superuser/admin (store owner) they will have different functionality (explained below)
+
+### Profile
+-  A logged in user can access their Profile page from the Profile icon in the navbar
+- Profile page will have two columns - one with the users default information and one with the users order history 
+- The default information column is a form for the user to fill out and save so that they don't need to enter all of these details everytime they checkout 
+- The order history column has an order number link which takes the user to the order confirmation for that individual order
+- The order history column also tells the user the order date, details and price
+
+### Toasts
+- Bootstrap toasts act as alert messages for the user throughout their journey - Letting them know when an item was added to their cart/removed from their cart, if their order was succesfull, if they are logged in or logged out. 
+- Admin also get alerts when they add/delete a product or blog post.
+
+### News blog
+- The company news page acts as a message board for the community
+- Admin can add business updates in the form of blog posts to keep customers informed of any important business updates (such as COVID closures)
+- This also acts as a discussion board, as logged in users can comment and show support on posts 
+- Admin have the option of adding, editing and deleting blog posts
+- Logged in users have the option to add comments to blog posts 
+
+### Admin functionality 
+- When a user is logged in as a superuser (store owner) they will have different functionality to a regular user
+- When they select the Profile icon from the navbar they will have the options to Add a Blog Post, Add a Product as well as go to their Profile or logout
+- If they select to add a product, they will be taken to a page to fill out a form and add a product
+- If they select to add a blog post, they will be taken to a page to fill out a form and add a post
+
+
+
+### Features Left to Implement
 
 # Technologies Used
 ## Languages, frameworks and libraries used
@@ -130,6 +205,7 @@ The following colors were selected for use across the site:
 * [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Bootstraps latest version 5 was used for layout and responsiveness. 
 * [jQuery](https://jquery.com/)- jQuery was used throughout the site.
 * [Heroku Postgres](https://www.heroku.com/postgres) - Used as database.
+* django allauth
 
 ## Other technologies used
 * [Heroku](http://heroku.com/) - Used to deploy project.

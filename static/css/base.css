@@ -60,6 +60,10 @@ h2 {
     z-index: 99999999999;
 }
 
+.product-details-container {
+  padding-top: 125px;
+}
+
 
 
 
@@ -84,6 +88,7 @@ body {
   .carousel {
     margin-bottom: 4rem;
   }
+
   /* Since positioning the image, we need to help out the caption */
   .carousel-caption {
     bottom: 3rem;
