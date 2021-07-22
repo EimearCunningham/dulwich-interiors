@@ -325,6 +325,104 @@ The following colors were selected for use across the site:
         - Select repository
         - Click 'Enable automatic deploys'
 
+## Setting up AWS to host static files & images:
+- Go to https://aws.amazon.com/ and create an account
+- Go to the AWS Management Console from within your account, and search for 'S3'
+- Access S3 and create a new bucket by selecting 'Create bucket'
+- Name bucket 'dulwich-interiors-ms4' and select nearest region
+- Uncheck box that says 'Block all public access' and tick box to acknowledge that the bucket will be public.
+- When bucket is created, go to 'Properties' tab and turn on static website hosting, selecting the option to 'Use this bucket to host a website'
+- Go to 'Permissions' tab and then 'CORS' configuration tab and add the following code:
+``` [
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+- Go to 'Bucket Policy' tab and select 'Policy Generator' - This will lead to a AWS Policy Generator page. On this page select 'S3' Bucket as the Policy Type, set the 'Principal' input to '*' and the Action dropdown to 'GetObject'
+- Go back to 'Bucket Policy' tab and copy the ARN. Paste into ARN box on AWS Policy Generator page
+- Select to 'Generate Policy' and then copy the policy into the 'Bucket Policy' editor. Add a '/*' onto the end of the 'Resource' key before saving
+- Go to 'Access Control' tab and select 'Everyone' under the Public Acces heading - Then set the 'List actions' box and save. Bucket is now set up.
+- Go back to AWS Services menu and search for IAM
+- Select 'Groups' and then 'Create a new group' called 'manage-dulwich-interiors'
+- Create a policy by selecting 'Policies' from the navbar and then 'Create policy'. Go to JSON tab and select 'Import managed policy'. Import the policy named 'S3 full access policy'
+- Go back to bucket and copy the ARN, paste into 'Resource' key of JSON code
+- Click 'Review policy', give the policy a name and a description and 'Create policy'
+- Attach the policy to the group we created: Go to 'Groups' and select the group just created. Click 'Attach policy' and search for the policy just created 
+- Create a user for the group: Go to 'Users' page and 'Add user'. Create user called 'manage-dulwich-interiors' and give them Programatic Access
+- Add the user to the group just created
+- Click 'Create User' and download the excel file that is created 
+- Connect Django to s3 by installing two new packages:
+```
+pip3 install boto3
+pip3 install django-storages
+```
+- Freeze these requirements:
+``` 
+pip3 freeze > requirements.txt
+```
+- Go to installed apps in 'settings.py' file and add 'storages',
+- Also in settings.py add:
+```
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = 'dulwich-interiors-ms4'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+```
+- Go to the settings tab of Heroku app and select 'Reveal config variables'. Add the following config variables:
+    - AWS_ACCESS_KEY_ID: (Get value from excel file)
+    - AWS_SECRET_ACCESS_KEY: (Get value from excel file)
+    - USE_AWS: True
+- Delete the 'DISABLE_COLLECTSTATIC' variable
+- Go to settings.py file, add:
+```
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+```
+- Create a project level file named 'custom_storages.py' and add:
+```
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+- Go back to settings.py and add:
+```
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+- Add, commit and push these changes
+- To settings.py add:
+```
+AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+```
+- Go to s3 and create a folder called 'Media'. Upload product images to this file. Make sure to select to 'Grant public read access to these objects' before selecting to upload
+
+
+
 
 # Credits
 
