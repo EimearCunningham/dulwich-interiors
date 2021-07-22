@@ -32,6 +32,8 @@ def post_detail(request, slug):
             new_comment.post = post
             # Save the comment to the database
             new_comment.save()
+            messages.success(
+            request, f'Successfully added comment!')
     else:
         comment_form = CommentForm()
 
