@@ -20,6 +20,12 @@
                 <p class="card-text ">{{ post.content | safe }}</p>
             </div>
         </div>
+        {% if request.user.is_superuser %}
+        <small class="ml-3">
+          <a href="{% url 'edit_post' post.slug %}">Edit</a> |
+          <a class="text-danger" href="{% url 'delete_post' post.slug %}">Delete</a>
+        </small>
+        {% endif %}
 
         <div class="col-md-8 card mb-4  mt-3 ">
             <div class="card-body">
@@ -39,6 +45,7 @@
               {% endfor %}
             </div>
           </div>
+          {% if request.user.is_authenticated %}
           <div class="col-md-8 card mb-4  mt-3 ">
             <div class="card-body">
               <h3>Leave a comment</h3>
@@ -49,6 +56,7 @@
               </form>
             </div>
           </div>
+          {% endif %}
         </div>
       </div>
       {% endblock %}
