@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from .models import Post
 from .forms import BlogForm, CommentForm
+from slugify import slugify
+
 
 
 class PostList(generic.ListView):
@@ -52,10 +54,18 @@ def add_post(request):
     
     if request.method == 'POST':
         form = BlogForm(request.POST)
+
         if form.is_valid():
-            form.save()
+            post = form.save(commit=False)
+            post.slug = slugify(post.title)
+            post.save()
             messages.success(request, 'Successfully added post!')
             return redirect(reverse('add_post'))
+
+        #if form.is_valid():
+            #form.save()
+            #messages.success(request, 'Successfully added post!')
+            #return redirect(reverse('add_post'))
         else:
             messages.error(request, 'Failed to add post. Please ensure the form is valid.')
     else:

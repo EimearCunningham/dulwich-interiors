@@ -7,5 +7,5 @@ urlpatterns = [
     path('delete/<slug:slug>/', views.delete_post, name='delete_post'),
     path('', views.PostList.as_view(), name='blog'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
-    
+
 ]
