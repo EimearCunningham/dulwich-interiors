@@ -56,10 +56,14 @@ All rendered pages were ran through the W3C Markup validation Service
 -	After clicking to ‘Read more’ of a blog post, a logged in user will have the option to leave a comment.
 -	They will need to fill out a form with their name, email address and the comment itself
 
-
 ### Site / business owner
-1.	As a site owner, I want to be able to add/edit and delete products and services on the site.
+1.	As a site owner, I want to be able to add/edit and delete products on the site.
+- When a superuser is logged in, if they select the user icon from the navbar they will have the option to 'Add a product'. This will lead them to a form they need to fill out with the product details. On submitting this form a new product will be added to the database.
+- Superusers will have the option to Edit / Delete products from the All Products page, or the individual product details page.
+
 2.	As a site owner, I want to be able to upload news/updates about the business.
+- Superusers will have the option to 'Add a blog post' from the User dropdown in the navbar. This will lead them to a form they will need to fill out with the post details. On submitting this form a blog post will be added.
+- Superusers will have the option to edit / delete blog posts from the main blog page, and from the individual post detail pages.
 
 
 ## Manual testing of all elements and functionality 
