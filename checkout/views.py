@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, \
+     reverse, get_object_or_404, HttpResponse
 from django.contrib import messages
 from django.conf import settings
 
@@ -13,6 +14,7 @@ from cart.contexts import cart_contents
 
 import json
 import stripe
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -85,7 +87,8 @@ def checkout(request):
 
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in your cart at the moment")
+            messages.error(request,
+                           "There's nothing in your cart at the moment")
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)

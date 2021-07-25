@@ -10,7 +10,6 @@ class OrderForm(forms.ModelForm):
                   'town_or_city', 'postcode', 'country',
                   'county',)
 
-    
     def __init__(self, *args, **kwargs):
         """
         Override init method of form to allow for customization
