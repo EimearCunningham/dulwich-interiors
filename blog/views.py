@@ -7,15 +7,9 @@ from .forms import BlogForm, CommentForm
 from slugify import slugify
 
 
-
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'blog/blog.html'
-
-
-#class PostDetail(generic.DetailView):
-#    model = Post
-#    template_name = 'blog/post_detail.html'
 
 
 def post_detail(request, slug):
@@ -35,7 +29,7 @@ def post_detail(request, slug):
             # Save the comment to the database
             new_comment.save()
             messages.success(
-            request, f'Successfully added comment!')
+                request, 'Successfully added comment!')
     else:
         comment_form = CommentForm()
 
@@ -49,9 +43,10 @@ def post_detail(request, slug):
 def add_post(request):
     """ View for store owner to add post """
     if not request.user.is_superuser:
-        messages.error(request, 'Oops! Only store owners have access to this page.')
+        messages.error(request,
+                       'Oops! Only store owners have access to this page.')
         return redirect(reverse('home'))
-    
+
     if request.method == 'POST':
         form = BlogForm(request.POST)
 
@@ -62,12 +57,10 @@ def add_post(request):
             messages.success(request, 'Successfully added post!')
             return redirect(reverse('add_post'))
 
-        #if form.is_valid():
-            #form.save()
-            #messages.success(request, 'Successfully added post!')
-            #return redirect(reverse('add_post'))
         else:
-            messages.error(request, 'Failed to add post. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to add post.'
+                           'Please ensure the form is valid.')
     else:
         form = BlogForm()
 
@@ -83,7 +76,8 @@ def add_post(request):
 def edit_post(request, slug):
     """ Edit a blog post  """
     if not request.user.is_superuser:
-        messages.error(request, 'Oops! Only store owners have access to this page.')
+        messages.error(request,
+                       'Oops! Only store owners have access to this page.')
         return redirect(reverse('home'))
     post = get_object_or_404(Post, slug=slug)
     if request.method == 'POST':
@@ -93,7 +87,8 @@ def edit_post(request, slug):
             messages.success(request, 'Successfully edited blog post!')
             return redirect(reverse('post_detail', args=[post.slug]))
         else:
-            messages.error(request, 'Failed to edit blog post. Please ensure the form is valid.')
+            messages.error(request, 'Failed to edit blog post.'
+                           'Please ensure the form is valid.')
 
     else:
         form = BlogForm(instance=post)
@@ -112,7 +107,8 @@ def edit_post(request, slug):
 def delete_post(request, slug):
     """ Delete a post from the blog """
     if not request.user.is_superuser:
-        messages.error(request, 'Oops! Only store owners have access to this page.')
+        messages.error(request,
+                       'Oops! Only store owners have access to this page.')
         return redirect(reverse('home'))
     post = get_object_or_404(Post, slug=slug)
     post.delete()

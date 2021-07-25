@@ -33,7 +33,7 @@ h2 {
 }
 
 .page-heading {
-  padding-top: 125px;
+  padding-top: 150px;
 }
 
 .dropdown-item, .nav-link {
@@ -190,6 +190,6 @@ h1 {
   font-size: 40px;
 }
 
-
-
-
+.col-sm-12 {
+  margin-bottom: 20px;
+}
