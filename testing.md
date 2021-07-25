@@ -64,6 +64,30 @@ All rendered pages were ran through the W3C Markup validation Service
 
 ## Manual testing of all elements and functionality 
 
+### Navbar
+
+### Homepage
+
+### Products Page
+
+### Product details page
+
+### Add / edit / delete products
+
+### Shopping cart
+
+### Checkout
+
+### Checkout success
+
+### Profile page
+
+### Blog
+
+### Post details & comments
+
+### Add / edit / delete blog posts
+
 
 ## Accessability Testing
 [WAVE Web Accessability Evaluation Tool](https://wave.webaim.org/) was used to test the accessability of my site.
