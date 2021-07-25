@@ -81,7 +81,14 @@ body {
   }
   
   
-  /* CUSTOMIZE THE CAROUSEL
+
+  -------------------------------------------------- */
+  
+  /* Carousel base class */
+  .carousel {
+    margin-bottom: 4rem;
+  }
+
   -------------------------------------------------- */
   
   /* Carousel base class */
@@ -167,7 +174,7 @@ body {
   }
 
   /* Buttons */ 
-  .btn {
+  .btn, button {
     background-color:#AD974F;
     color: #EAEAEA;
     border-radius: 2px;
@@ -176,6 +183,11 @@ body {
 
 #blog-row {
   padding-top: 125px;
+}
+
+h1 {
+  color: #231F20;
+  font-size: 40px;
 }
 
 
