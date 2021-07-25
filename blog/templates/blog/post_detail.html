@@ -3,60 +3,63 @@
 
 {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
+  <div class="row">
+    <div class="col"></div>
+  </div>
 </div>
 {% endblock %}
 
 {% block content %}
 <div class="overlay"></div>
 <div class="container">
-    <div class="row">
-        <div class="col-12 card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
-                <p class=" text-muted">{{ post.created_on }}</p>
-                <p class="card-text ">{{ post.content | safe }}</p>
-            </div>
-        </div>
-        {% if request.user.is_superuser %}
-        <small class="ml-3">
-          <a href="{% url 'edit_post' post.slug %}">Edit</a> |
-          <a class="text-danger" href="{% url 'delete_post' post.slug %}">Delete</a>
-        </small>
-        {% endif %}
+  <div class="row" id="blog-row">
+    <div class="col-12 card mb-4  mt-3 left  top">
 
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <div class="card-body">
-              <!-- comments -->
-              <h2>{{ comments.count }} comments</h2>
-      
-              {% for comment in comments %}
-              <div class="comments" style="padding: 10px;">
-                <p class="font-weight-bold">
-                  {{ comment.name }}
-                  <span class=" text-muted font-weight-normal">
-                    {{ comment.created_on }}
-                  </span>
-                </p>
-                {{ comment.body | linebreaks }}
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          {% if request.user.is_authenticated %}
-          <div class="col-md-8 card mb-4  mt-3 ">
-            <div class="card-body">
-              <h3>Leave a comment</h3>
-              <form method="post" style="margin-top: 1.3em;">
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-              </form>
-            </div>
-          </div>
-          {% endif %}
-        </div>
+      <div class="card-body">
+        <h2>{% block title %} {{ post.title }} {% endblock title %}</h2>
+        <p class=" text-muted">{{ post.created_on }}</p>
+        <p class="card-text ">{{ post.content | safe }}</p>
       </div>
-      {% endblock %}
+
+    </div>
+    {% if request.user.is_superuser %}
+    <small class="ml-3">
+      <a href="{% url 'edit_post' post.slug %}">Edit</a> |
+      <a class="text-danger" href="{% url 'delete_post' post.slug %}">Delete</a>
+    </small>
+    {% endif %}
+
+    <div class="col-md-8 card mb-4  mt-3 ">
+      <div class="card-body">
+        <!-- comments -->
+        <h2>{{ comments.count }} comments</h2>
+
+        {% for comment in comments %}
+        <div class="comments" style="padding: 10px;">
+          <p class="font-weight-bold">
+            {{ comment.name }} left a comment 
+            <span class=" text-muted font-weight-normal">
+              on: {{ comment.created_on }}
+            </span>
+          </p>
+          {{ comment.body | linebreaks }}
+        </div>
+        <hr>
+        {% endfor %}
+      </div>
+    </div>
+    {% if request.user.is_authenticated %}
+    <div class="col-md-8 card mb-4  mt-3 ">
+      <div class="card-body">
+        <h3>Leave a comment</h3>
+        <form method="post" style="margin-top: 1.3em;">
+          {{ comment_form | crispy }}
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+        </form>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
