@@ -222,6 +222,38 @@ The following colors were selected for use across the site:
 
 # Deployment
 
+## Local deployment
+## Local Deployment 
+
+-	Log in to https://github.com/ and open https://github.com/EimearCunningham/dulwich-interiors
+-	Select the ‘Code’ dropdown and copy the HTTPS link
+-	Open your IDE environment and in the terminal type:
+```
+git clone (paste HTTPS link from above)
+```
+
+-	Install all requirements from the repository by going to the terminal and typing:
+```
+pip3 install -r requirements.txt
+```
+-	Set the following environment variables in gitpod settings:
+	- DEVELOPMENT = True
+	- SECRET_KEY = "type secret key here"
+	- STRIPE_PUBLIC_KEY = "type stripe public key here"
+	- STRIPE_SECRET_KEY = "type stripe secret key here"
+	- STRIPE_WH_SECRET = "type stripe webhook secret key here"
+
+-	Make migrations and migrate to the database by typing the following commands in the terminal:
+```
+ python3 manage.py makemigrations
+	python3 manage.py migrate
+```
+-	Create a superuser by typing in the terminal: 
+```
+python3 manage.py createsuperuser
+```
+
+
 ## Deploying to Heroku 
 
 - Create a Heroku account and app:
