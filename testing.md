@@ -86,9 +86,37 @@ All rendered pages were ran through the W3C Markup validation Service
     - 'Shop by Room' dropdown gives users four options, allowing them to filter products by their room (category). Each option from dropdown leads the user to a page that only shows products in that room
     - 'News' link leads the user to the news/blog page of the site
 - Navbar responsiveness was tested across small, medium, large and extra large screen sizes using Google Chrome dev tools
+
+### Registering / logging in / logging out
+- Test registering for an account
+    - User selects 'User' icon from navbar and selects to 'Register'. They are taken to the Sign up Page.
+    - Test Register form:
+        - If user doesn't enter email address / retype emaill address they get an error
+        - If user doesn't enter a password / retype password they get an error
+        - If password 1 doesn't match password 2 user will get an error 
+        - If user doesn't enter a username they get an error
+        - If user enters an email address that is already registered they get an error
+        - On submitting a valid form, an email is sent to the user with a link to follow to verify their email address
+        - On following the link from the email, the user is brought back to the site and asked to 'Confirm'.
+        - On selecting the 'Confirm' button the user is brought to the sign in page and can sign in to their newly created account.
+
+- Test signing in to an existing account
+    - User selects the 'User' icon from navbar and selects to 'Log in'
+    - User is taken to sign in page
+    - If user enters an incorrect username/password match they will receive an error message
+    - If user enters correct username/password match they are logged in to their account with a successfull alert message
+        
+- Test signing out of account
+    - When a logged in user goes to the User icon of the navbar and selects to logout, they are taken to a page asking them to confirm sign out. On confirming this the user is logged out with a succesfull alert message
     
 
 ### Homepage
+- Test homepage carousel
+    - Test that arrows on carousel work and take the user to the next image. When 'Next' arrow is selected on the final image it takes the user back to the first image
+    - Test that the button on each slide (Shop, Register, News) takes the user to the appropriate page
+- Test responsiveness of homepage
+    - On testing the responsiveness of the carousel across small and medium screen sizes, it was noticed that the carousel wasn't occupying the entire screen height. This was fixed by changing the height of the carousel item, and carousel item image to 100vh.
+
 
 ### Products Page
 
