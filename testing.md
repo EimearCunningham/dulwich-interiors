@@ -69,6 +69,24 @@ All rendered pages were ran through the W3C Markup validation Service
 ## Manual testing of all elements and functionality 
 
 ### Navbar
+- Test main site logo by clicking to ensure it leads user back to homepage
+- Test search bar
+    - Search for a word/words in items title and ensure it is returned to the user
+    - Search for a word/words in items description and ensure it is returned to the user
+    - Search for a word/words in multiple items title and ensure all products are returned to the user
+    - Search for a word/words in multiple items description and ensure all products are returned to the user
+- Test User icon to ensure that it reveals the correct dropdown depending on if the user is logged in/ not logged in / logged in as superuser
+    - If user is not logged in the dropdown reveals two options 'Login' and 'Register'
+    - If user is logged in the dropdown has two options 'Logout' and 'Profile'
+    - If user is logged in as superuser dropdown has options to 'Add a product', 'Add a blog post', 'Profile' and 'Logout'
+    - All dropdown items were tested to ensure the user is brought to the correct page
+- Test cart icon to ensure it leads to the users Shopping Cart page
+- Test navigation links
+    - 'All Products' link leads to the Products page, displaying all products in all categories
+    - 'Shop by Room' dropdown gives users four options, allowing them to filter products by their room (category). Each option from dropdown leads the user to a page that only shows products in that room
+    - 'News' link leads the user to the news/blog page of the site
+- Navbar responsiveness was tested across small, medium, large and extra large screen sizes using Google Chrome dev tools
+    
 
 ### Homepage
 
