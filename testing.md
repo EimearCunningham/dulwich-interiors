@@ -131,6 +131,16 @@ All rendered pages were ran through the W3C Markup validation Service
 - Test add to cart button to ensure that product is added to cart, user gets success alert message, and the cart grand total is updated accordingly
 
 ### Shopping cart
+- If user selects the shopping cart logo when there are no items in their cart the cart page will tell them 'Your cart is empty' & provide button to 'Keep shopping'. Test this button to ensure it takes user back to Products page.
+- Test quantity selector input - Should only allow quantity between 1 and 6
+    - If user uses 'Plus' and 'Minus' buttons to select quantity, they will only be able to select quantity between 1 and 6 - buttons will grey out if number is outside this range
+    - Bug found where user is able to manually type in quantity above 6
+- Test Remove Item link
+    - On selecting the Remove Item link item is removed from cart and user gets successful alert message
+- Test 'Checkout' button
+    - Only shows when user has item(s) in their cart
+    - Takes user to the checkout page
+
 ### Checkout
 ### Checkout success
 ### Profile page
