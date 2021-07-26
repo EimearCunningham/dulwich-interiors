@@ -32,10 +32,6 @@ h2 {
     color: #AD974F;
 }
 
-.page-heading {
-  padding-top: 150px;
-}
-
 .dropdown-item, .nav-link {
     color: #231F20;
 }
@@ -60,9 +56,7 @@ h2 {
     z-index: 99999999999;
 }
 
-.product-details-container {
-  padding-top: 125px;
-}
+
 
 
 
@@ -174,9 +168,6 @@ h2 {
     padding: 4px;
   }
 
-#blog-row {
-  padding-top: 125px;
-}
 
 h1 {
   color: #231F20;
@@ -185,4 +176,18 @@ h1 {
 
 .col-sm-12 {
   margin-bottom: 20px;
+}
+
+.header-container {
+  padding-top: 165px;
+}
+
+@media (max-width: 991px) {
+  .header-container {
+      padding-top: 200px;
+  }
+
+  body {
+      height: calc(100vh - 200px);
+  }
 }

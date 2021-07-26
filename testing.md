@@ -119,24 +119,25 @@ All rendered pages were ran through the W3C Markup validation Service
 
 
 ### Products Page
+- Test 'View product' button to ensure that user is brought to the product details page of that particular product
+- Test responsiveness of page using Google Chrome Dev Tools
+    - Found that on small device sizes the navbar was covering the page heading. Fixed by using media query to add extra padding to header-container class on small and medium screen sizes.
 
 ### Product details page
-
-### Add / edit / delete products
+- Test quantity selector input - Should only allow quantity between 1 and 6
+    - If user uses 'Plus' and 'Minus' buttons to select quantity, they will only be able to select quantity between 1 and 6 - buttons will grey out if number is outside this range
+    - Bug found where user is able to manually type in quantity above 6 - Fixrd by adding 'max="6"' to the input field
+- Test 'Back to products' button to ensure user is brought back to the All Products page
+- Test add to cart button to ensure that product is added to cart, user gets success alert message, and the cart grand total is updated accordingly
 
 ### Shopping cart
-
 ### Checkout
-
 ### Checkout success
-
 ### Profile page
-
 ### Blog
-
 ### Post details & comments
-
 ### Add / edit / delete blog posts
+### Add / edit / delete products
 
 
 ## Accessability Testing
