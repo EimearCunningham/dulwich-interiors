@@ -174,13 +174,23 @@ All rendered pages were ran through the W3C Markup validation Service
     - Form cannot be submitted if any field is left blank
     - On submitting the comments form, the users comment is added to the post, and the number of comments is updated. User gets a success alert message that they've added a comment
 
-### Add / edit / delete blog posts
+### Add / edit / delete blog products
 - Ensure that if a logged in user who is not a store owner manually types in URL for adding a product, editing a product or deleting a product - that they cannot access the page and get an alert message that these pages are only for store owners
 - Ensure that if a user who is not logged in tries to manually type the URL for adding/ editing/ deleting products that they are led to the sign in page where they either sign in as superuser / regular user
 #### Add Product
 - When signed in as superuser, user has the option to 'Add a product' from the User dropdown in the navbar
-- 
-### Add / edit / delete products
+- Ensure that Add Product form cannot be submitted if one of the required fields are not filled in
+- Test that on form submit the product is added to the store and the user gets a succesfull alert message
+- Test that 'Cancel' button takes user back to Products page
+#### Edit Product
+- Test that logged in superuser has the option to edit a product from the Products page and the Product Details page
+- Test that the Edit link on both of the above pages takes the superuser to the Edit Product page, and that the form is prepopulated with that produts current details
+- On changing any field and selecting the 'Update product' button the product details are updated, the user is brought to the Product Details page of that product, and they get a successfull alert message 
+- The 'Cancel' button takes the user back to the Products page
+#### Delete Product
+- Test that superuser has the option to delete a product from the Products page and from the Product Details page
+- Each of the above links delete the product, alert the user that the product has been deleted, and redirects the user to the Products page
+### Add / edit / delete blog posts
 
 
 ## Accessability Testing
