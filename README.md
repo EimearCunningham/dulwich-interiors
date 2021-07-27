@@ -222,7 +222,6 @@ The following colors were selected for use across the site:
 
 # Deployment
 
-## Local deployment
 ## Local Deployment 
 
 -	Log in to https://github.com/ and open https://github.com/EimearCunningham/dulwich-interiors
@@ -252,6 +251,8 @@ pip3 install -r requirements.txt
 ```
 python3 manage.py createsuperuser
 ```
+## Database schema
+![Database schema](readme-images/database_schema.JPG)
 
 
 ## Deploying to Heroku 
