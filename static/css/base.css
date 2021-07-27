@@ -9,7 +9,12 @@ body {
     /*background: url('/media/homepage_image.jpg') no-repeat center center fixed;*/
     background-size: cover;
     height: calc(100vh - 164px);
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, .btn {
+  font-family: 'Dancing Script', cursive;
+  
 }
 
 .overlay {
