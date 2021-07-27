@@ -142,11 +142,44 @@ All rendered pages were ran through the W3C Markup validation Service
     - Takes user to the checkout page
 
 ### Checkout
+- Ensure that Order Summary column correctly displays users current order, and adds on 20% delivery charge
+- Test checkout form:
+    - Test that email address is prepopulated as users email
+    - Test submitting form with one required field left blank each time (Name, email, phone number, town or city, street address 1, card number, card expiry date, cvc)
+        - Form will not submit without required fields
+- Test 'Checkout' button
+    - Slight delay in getting to checkout success page
+    - On submitting the checkout form, user gets a succesful alert message with their order number, letting them know a confirmation email has been sent
+    - User is directed to checkout success page
+    - User receives email with the subject line 'Thank you for your order at Dulwich Interiors!'
 ### Checkout success
+- Ensure that checkout success page shows correct details under Order Info, Order Details, Delivering to and Billing Info
+- Test that 'Continue shopping' button takes user back to Products page
 ### Profile page
-### Blog
+- Ensure that not logged in users are asked to sign in if they manually add '/profile' to the sites URL
+- Test that Order History section displays users previous orders
+- Test that the Order Number link in the Order History section directs user to the Order History page of that particular order, and gives them an alert message that this is a past order
+- Test that the user can add / remove any line of information from the Default Delivery Information form, and on submitting the relevant info is added/removed from the form
+- Test that after saving information to the Default Delivery Information form on the profile page, that it is pulled through to prepopulate the form on the checkout page
+
+### Blog / News page
+- Accessible through the 'News' link on navbar
+- Test that all posts added by store owners are displayed, with the most recent post at the top of the page
+- Test the 'Read more' button of each post to ensure it takes the user to the post details page of that post
 ### Post details & comments
+- Test that the number of comments on that post is correctly added up and displayed to the user
+- Ensure that logged in user has the option to add a comment
+- Ensure that not logged in user is asked to 'Please register / sign in to leave a comment!'
+- Test comments form:
+    - Form cannot be submitted if any field is left blank
+    - On submitting the comments form, the users comment is added to the post, and the number of comments is updated. User gets a success alert message that they've added a comment
+
 ### Add / edit / delete blog posts
+- Ensure that if a logged in user who is not a store owner manually types in URL for adding a product, editing a product or deleting a product - that they cannot access the page and get an alert message that these pages are only for store owners
+- Ensure that if a user who is not logged in tries to manually type the URL for adding/ editing/ deleting products that they are led to the sign in page where they either sign in as superuser / regular user
+#### Add Product
+- When signed in as superuser, user has the option to 'Add a product' from the User dropdown in the navbar
+- 
 ### Add / edit / delete products
 
 
