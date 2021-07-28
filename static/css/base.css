@@ -1,187 +1,19 @@
 /* General rules across site */
 
 html {
-    height: 100%;
-    font-size: 16px;
+  height: 100%;
+  font-size: 16px;
 }
 
 body {
-    /*background: url('/media/homepage_image.jpg') no-repeat center center fixed;*/
-    background-size: cover;
-    height: calc(100vh - 164px);
-    font-family: 'Montserrat', sans-serif;
+  height: calc(100vh - 164px);
+  font-family: 'Montserrat', sans-serif;
 }
 
-h1, h2, .btn {
+h1,
+h2,
+.btn {
   font-family: 'Dancing Script', cursive;
-  
-}
-
-.overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: #EAEAEA;
-    z-index: -1;
-}
-
-/* Colors 
-#AD974F GOLD
-#231F20 DARK GRAY
-#EAEAEA OFF WHITE */
-
-
-h2 {
-    color: #AD974F;
-}
-
-.dropdown-item, .nav-link {
-    color: #231F20;
-}
-
-
-
-/* Images */
-.card-img-top {
-    height: 50vh;
-}
-
-.cart-image {
-    height: 25vh;
-    width: 20vw;
-}
-
-/* Messages */
-.message-container {
-    position: fixed;
-    top: 72px;
-    right: 15px;
-    z-index: 99999999999;
-}
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-  -------------------------------------------------- */
-  
-  /* Carousel base class */
-  .carousel {
-    margin-bottom: 4rem;
-  }
-
-  -------------------------------------------------- */
-  
-  /* Carousel base class */
-  .carousel {
-    margin-bottom: 4rem;
-  }
-
-  /* Since positioning the image, we need to help out the caption */
-  .carousel-caption {
-    bottom: 3rem;
-    z-index: 10;
-  }
-  
-  /* Declare heights because of positioning of img element */
-  .carousel-item {
-    height: 100vh;
-  }
-
-  .carousel-item > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 100vh;
-  }
-
-.bd-placeholder-img {
-  width:100%;
-  height: 100%;
-}
-  
-  
-  /* MARKETING CONTENT
-  -------------------------------------------------- */
-  
-  /* Center align the text within the three columns below the carousel */
-  .marketing .col-lg-4 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  .marketing h2 {
-    font-weight: 400;
-  }
-  /* rtl:begin:ignore */
-  .marketing .col-lg-4 p {
-    margin-right: .75rem;
-    margin-left: .75rem;
-  }
-  /* rtl:end:ignore */
-  
-  
-  /* Featurettes
-  ------------------------- */
-  
-  .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-  }
-  
-  /* Thin out the marketing headings */
-  .featurette-heading {
-    font-weight: 300;
-    line-height: 1;
-    /* rtl:remove */
-    letter-spacing: -.05rem;
-  }
-
-
-  
-  
-  /*  Carousel */
-  
-  @media (min-width: 40em) {
-    /* Bump up size of carousel content */
-    .carousel-caption p {
-      margin-bottom: 1.25rem;
-      font-size: 1.25rem;
-      line-height: 1.4;
-    }
-  
-    .featurette-heading {
-      font-size: 50px;
-    }
-  }
-  
-  @media (min-width: 62em) {
-    .featurette-heading {
-      margin-top: 7rem;
-    }
-  }
-
-  /* Buttons */ 
-  .btn, button {
-    background-color:#AD974F;
-    color: #EAEAEA;
-    border-radius: 2px;
-    padding: 4px;
-  }
-
-
-h1 {
-  color: #231F20;
-  font-size: 40px;
 }
 
 .col-sm-12 {
@@ -192,12 +24,127 @@ h1 {
   padding-top: 165px;
 }
 
+/* Headings */
+h2 {
+  color: #AD974F;
+}
+
+h1 {
+  color: #231F20;
+  font-size: 40px;
+}
+
+/* Images */
+.card-img-top {
+  height: 50vh;
+}
+
+.cart-image {
+  height: 25vh;
+  width: 20vw;
+}
+
+/* Messages */
+.message-container {
+  position: fixed;
+  top: 72px;
+  right: 15px;
+  z-index: 99999999999;
+}
+
+/* Buttons */
+.btn,
+button {
+  background-color: #AD974F;
+  color: #EAEAEA;
+  border-radius: 2px;
+  padding: 4px;
+}
+
+/* Extra padding on sm and md screen sizes */
 @media (max-width: 991px) {
   .header-container {
-      padding-top: 200px;
+    padding-top: 200px;
   }
 
   body {
-      height: calc(100vh - 200px);
+    height: calc(100vh - 200px);
+  }
+}
+
+.dropdown-item,
+.nav-link {
+  color: #231F20;
+}
+
+
+/* Carousel rules */
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.carousel-item {
+  height: 100vh;
+}
+
+.carousel-item>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100vh;
+}
+
+.bd-placeholder-img {
+  width: 100%;
+  height: 100%;
+}
+
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.marketing h2 {
+  font-weight: 400;
+}
+
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+.featurette-divider {
+  margin: 5rem 0;
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+@media (min-width: 40em) {
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
   }
 }

@@ -11,6 +11,10 @@
 ### Errors / Warnings found by W3C Markup Validation Service:
 All rendered pages were ran through the W3C Markup validation Service. No errors / warnings found.
 ### Errors / Warnings found by W3C CSS Validation Service:
+All css files were ran through the W3C CSS validation Service. No errors / warnings found.
+### Errors / Warnings found by JS HINT: 
+All JavaScript code was ran through JS Hint with the comment /*jshint esversion: 6 */
+Some missing semicolon warnings were found and fixed
 ### Errors / Warnings found by PEP8 online:
 
 ## Testing User Stories
