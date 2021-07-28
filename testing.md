@@ -195,6 +195,22 @@ Some missing semicolon warnings were found and fixed
 - Test that superuser has the option to delete a product from the Products page and from the Product Details page
 - Each of the above links delete the product, alert the user that the product has been deleted, and redirects the user to the Products page
 ### Add / edit / delete blog posts
+#### Add Blog Post
+- When signed in as superuser, user has the option to 'Add a Blog Post' from the User dropdown in the navbar
+- Ensure that Add Blog post form cannot be submitted if one of the required fields are not filled in
+- Test that on form submit the post is added to the blog and the superuser gets a succesfull alert message
+- Test that draft posts aren't added to the blog
+- Test that 'Cancel' button takes user back to News page
+    - Bug found where this button led to products page. Updated URL to fix.
+#### Edit Blog Post
+- Test that logged in superuser has the option to edit a blog post from the News page and the Post Details page
+- Test that the Edit link on both of the above pages takes the superuser to the Edit blog post page, and that the form is prepopulated with that posts current details
+- On changing any field and selecting the 'Edit Post' button the post details are updated, the user is brought to the Details page of that post, and they get a successfull alert message 
+- The 'Cancel' button takes the user back to the Products page
+    - Bug found where this button led to products page. Updated URL to fix.
+#### Delete Blog Post
+- Test that superuser has the option to delete a post from the News page and from the Post Details page
+- Each of the above links delete the post, alert the user that the post has been deleted, and redirects the user to the News page
 
 
 ## Accessability Testing

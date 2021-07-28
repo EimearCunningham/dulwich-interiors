@@ -2,7 +2,7 @@
 ## An online interior design store
 A website for customers / potential customers to browse products and services and potentially make a purchase.
 
-Live website: 
+Live website: https://dulwich-interiors-ms4.herokuapp.com/
 
 # UX
 ### Who this website is for:
@@ -25,11 +25,11 @@ The simple, clear layout of the site allows users to easily add items to their c
 7. As a user, I want to create and sign in to my account.
 8. As a signed in user, I want to be able to save my delivery details for my next purchase.
 9. As a user, I want to read news/updates on the business.
-10. As a user, I want to be able to comment on news/updates uploaded by the business - to show support / ask questions. 
+10. As a signed in user, I want to be able to comment on news/updates uploaded by the business - to show support / ask questions. 
 
 ### Site / business owner
-1. As a site owner, I want to be able to add/edit and delete products and services on the site.
-2. As a site owner, I want to be able to upload news/updates about the business. 
+1. As a site owner, I want to be able to add/edit and delete products on the site.
+2. As a site owner, I want to be able to upload news/updates about the business, and be able to edit and delete these posts.  
 
 ## Design 
 ### Color Scheme 
@@ -39,7 +39,8 @@ The following colors were selected for use across the site:
 #EAEAEA WHISPER - An off white shade for backgrounds. 
 
 ### Typography 
-'Dancing Script' family from Google Fonts was used throughout the site. I selected this font as I thought it complimented the clean, classy feel of the site.
+'Dancing Script' family from Google Fonts was used for headings throughout the site. I selected this font as I thought it complimented the clean, classy feel of the site.
+'Montserrat' google font was also used for main text
 
 ## Wireframes:
 <details>
@@ -115,10 +116,7 @@ The following colors were selected for use across the site:
 </p>
 </details>
 
-
-
 # Features
-
 ### Navbar
 - Bootstrap navbar available across all pages
 - First row contains shop logo that takes user back to home page as expected, a search bar to search products, and two logos - one for the user to login/register/visit their profile and one to take the user to their shopping cart.
@@ -193,10 +191,6 @@ The following colors were selected for use across the site:
 - If they select to add a product, they will be taken to a page to fill out a form and add a product
 - If they select to add a blog post, they will be taken to a page to fill out a form and add a post
 
-
-
-### Features Left to Implement
-
 # Technologies Used
 ## Languages, frameworks and libraries used
 * HTML5, CSS3, Javascript and Python were the programming languages used.
@@ -218,7 +212,7 @@ The following colors were selected for use across the site:
 * [Pexels](https://www.pexels.com/) - Stock photos used for product images. 
 
 # Testing
-
+Testing can be found here [Testing.md](testing.md)
 
 # Deployment
 
@@ -454,12 +448,14 @@ AWS_S3_OBJECT_PARAMETERS = {
 ```
 - Go to s3 and create a folder called 'Media'. Upload product images to this file. Make sure to select to 'Grant public read access to these objects' before selecting to upload
 
-
-
-
 # Credits
-
+## Media
+- All images used throughout the site are taken from [Pexels](https://www.pexels.com/)
 ## Code
+- Project idea based on Code Institutes Boutique Ado mini project
+- Blog app based on this tutorial: https://djangocentral.com/building-a-blog-application-with-django/
+- Code for main page carousel from Bootstrap example: https://getbootstrap.com/docs/5.0/examples/carousel/
+## Acknowledgements 
 
 
 **This site is for educational purposes only** 
