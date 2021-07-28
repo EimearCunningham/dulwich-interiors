@@ -9,7 +9,7 @@
 * [PEP8 Online](http://pep8online.com/) - To validate python code
 
 ### Errors / Warnings found by W3C Markup Validation Service:
-All rendered pages were ran through the W3C Markup validation Service
+All rendered pages were ran through the W3C Markup validation Service. No errors / warnings found.
 ### Errors / Warnings found by W3C CSS Validation Service:
 ### Errors / Warnings found by PEP8 online:
 

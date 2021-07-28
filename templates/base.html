@@ -7,7 +7,7 @@
 
   {% block meta %}
   <!-- Required meta tags -->
-  <meta http-equiv="X-UA-Compatible">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% endblock %}
@@ -72,8 +72,9 @@
       <div class="col-12 col-lg-4 navbar-col">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
           <li class="nav-item list-inline-item">
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav-2"
-              aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#main-nav-2" aria-controls="main-nav" aria-expanded="false"
+              aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"><i class="fas fa-bars"
                   style="color:#000000; font-size:28px;"></i></span>
             </button>
@@ -85,67 +86,64 @@
                   </a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="roomDropdown" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="#" id="roomDropdown1" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     Shop by room
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="roomDropdown">
+                  <ul class="dropdown-menu" aria-labelledby="roomDropdown1">
                     <li><a class="dropdown-item" href="{% url 'products'%}?category=kitchen">Kitchen</a></li>
                     <li><a class="dropdown-item" href="{% url 'products'%}?category=living_room">Living Room</a></li>
                     <li><a class="dropdown-item" href="{% url 'products'%}?category=bedroom">Bedroom</a></li>
                     <li><a class="dropdown-item" href="{% url 'products'%}?category=bathroom">Bathroom</a></li>
                   </ul>
                 </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'blog' %}">
+                    News
+                  </a>
+                </li>
+              </ul>
+            </div>
+          <li class="nav-item dropdown list-inline-item">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+              aria-expanded="false"><i class="fas fa-user fa-2x"></i></a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              {% if request.user.is_authenticated %}
+              {% if request.user.is_superuser %}
+              <a href="{% url 'add_product' %}" class="dropdown-item">Add a Product</a>
+              <a href="{% url 'add_post' %}" class="dropdown-item">Add a Blog Post</a>
+              {% endif %}
+              <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              {% else %}
+              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+
+              {% endif %}
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog' %}">
-              News
+          <li class="list-inline-item">
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+              href="{% url 'view_cart' %}">
+              <div class="text-center">
+                <div><i class="fas fa-shopping-cart fa-lg"></i></div>
+                <p class="my-0">
+                  {% if grand_total %}
+                  £{{ total|floatformat:2 }}
+                  {% else %}
+                  £0.00
+                  {% endif %}
+                </p>
+              </div>
             </a>
           </li>
+        </ul>
       </div>
-      <li class="nav-item dropdown list-inline-item">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false"><i
-            class="fas fa-user fa-2x"></i></a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          {% if request.user.is_authenticated %}
-          {% if request.user.is_superuser %}
-          <a href="{% url 'add_product' %}" class="dropdown-item">Add a Product</a>
-          <a href="{% url 'add_post' %}" class="dropdown-item">Add a Blog Post</a>
-          {% endif %}
-          <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-          <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-          {% else %}
-          <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-          <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-
-          {% endif %}
-        </div>
-      </li>
-      <li class="list-inline-item">
-        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-          href="{% url 'view_cart' %}">
-          <div class="text-center">
-            <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-            <p class="my-0">
-              {% if grand_total %}
-              £{{ total|floatformat:2 }}
-              {% else %}
-              £0.00
-              {% endif %}
-            </p>
-          </div>
-        </a>
-      </li>
-      </ul>
-    </div>
     </div>
     <div class="row bg-white">
       <nav class="navbar navbar-expand-lg w-100">
-        <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
-          aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#000000; font-size:28px;"></i></span>
-        </button>-->
-      <div class="collapse navbar-collapse" id="main-nav-2">
+        <div class="collapse navbar-collapse" id="main-nav-2">
           <ul class="navbar-nav w-auto mx-auto">
             <li class="nav-item list-inline-item">
               <a class="nav-link" href="{% url 'products' %}">
@@ -169,7 +167,9 @@
                 News
               </a>
             </li>
+          </ul>
         </div>
+      </nav>
     </div>
   </header>
 
@@ -199,7 +199,7 @@
 
   {% block postloadjs %}
   <!-- display toast messages -->
-  <script type="text/javascript">
+  <script>
     var toastElList = [].slice.call(document.querySelectorAll('.toast'));
     var toastList = toastElList.map(function (toastEl) {
       return new bootstrap.Toast(toastEl).show();
