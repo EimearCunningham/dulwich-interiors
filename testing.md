@@ -218,4 +218,11 @@ Some line too long errors has to be ignored due to long variable names and impor
 ## Accessability Testing
 [WAVE Web Accessability Evaluation Tool](https://wave.webaim.org/) was used to test the accessability of my site.
 The following recommendations and changes were made:
+- Missing form label for Search Products input 
+    - No label is needed visually so I added a descriptive title to the input instead
+- Empty Button Error
+    - Fixed by adding aria-label to button element
+- Empty link error
+    - Fixed by adding aria-label to button element
+
 
