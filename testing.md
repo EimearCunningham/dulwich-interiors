@@ -16,6 +16,8 @@ All css files were ran through the W3C CSS validation Service. No errors / warni
 All JavaScript code was ran through JS Hint with the comment /*jshint esversion: 6 */
 Some missing semicolon warnings were found and fixed
 ### Errors / Warnings found by PEP8 online:
+All Python code was ran through pep8 online tool and errors such as trailing white spaces, line too long, no new line at end of file were all fixed.
+Some line too long errors has to be ignored due to long variable names and imported settings from allauth. 
 
 ## Testing User Stories
 ### Site user

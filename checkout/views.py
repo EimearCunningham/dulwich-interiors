@@ -28,7 +28,8 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, we were unable to proceess your payment. Please try again later.')
+        messages.error(request, 'Sorry, we were unable to proceess'
+                       'your payment. Please try again later.')
         return HttpResponse(content=e, status=400)
 
 
@@ -72,16 +73,19 @@ def checkout(request):
 
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your cart wasn't found in our store. "
-                        "Please call us for assistance!")
+                        "One of the products in your cart "
+                        "wasn't found in our store. Please call"
+                        "us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
         else:
-            messages.error(request, 'Oops! There was an error with your form. Please check the information provided.')
+            messages.error(request, 'Oops! There was an error with your form.'
+                           'Please check the information provided.')
 
     else:
 
