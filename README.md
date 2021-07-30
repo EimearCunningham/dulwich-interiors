@@ -456,6 +456,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 - Blog app based on this tutorial: https://djangocentral.com/building-a-blog-application-with-django/
 - Code for main page carousel from Bootstrap example: https://getbootstrap.com/docs/5.0/examples/carousel/
 ## Acknowledgements 
-
+- I would like to thank the tutors at Code Institute for their help throughout the course, and my mentor Chris Quinn for his support with my final two projects.
+- I would also like to thank the Code Institute slack community for their support.
 
 **This site is for educational purposes only** 
